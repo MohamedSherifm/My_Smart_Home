@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">My Smart Home</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <array name="devices_Names">
+        <item>Lamp</item>
+        <item>Air Conditioner</item>
+        <item>Television</item>
+        <item>Door Lock</item>
+        <item>Camera</item>
+
+    </array>
+
+    <array name="devices_Images">
+        <item>@drawable/laamp</item>
+        <item>@drawable/condition</item>
+        <item>@drawable/televation</item>
+        <item>@drawable/dooor</item>
+        <item>@drawable/caamera</item>
+    </array>
+
+    <array name="devices_Id">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </array>
+</resources>
