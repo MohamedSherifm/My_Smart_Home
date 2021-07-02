@@ -6,6 +6,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 class AcProperty (
     val ac_id: Int,
+    val ac_name: String,
     val device_type: Int,
     val pin:Int,
     val status: Int,

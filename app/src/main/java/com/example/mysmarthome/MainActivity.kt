@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 
@@ -15,6 +16,8 @@ class MainActivity : AppCompatActivity() {
 
     companion object{
         var globalVar = 1
+        var changed = MutableLiveData<Int>()
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

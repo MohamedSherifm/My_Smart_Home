@@ -9,5 +9,24 @@
         android:id="@+id/devicesScreenFragment"
         android:name="com.example.mysmarthome.devicesScreen.DevicesScreenFragment"
         android:label="fragment_devices_screen"
-        tools:layout="@layout/fragment_devices_screen" />
+        tools:layout="@layout/fragment_devices_screen" >
+        <action
+            android:id="@+id/action_devicesScreenFragment_to_addDevicesFragment2"
+            app:destination="@id/addDevicesFragment2" />
+        <action
+            android:id="@+id/action_devicesScreenFragment_to_onOffDevicesFragment"
+            app:destination="@id/onOffDevicesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDevicesFragment2"
+        android:name="com.example.mysmarthome.addDevices.AddDevicesFragment"
+        android:label="AddDevicesFragment" />
+    <fragment
+        android:id="@+id/onOffDevicesFragment"
+        android:name="com.example.mysmarthome.onOffDevices.OnOffDevicesFragment"
+        android:label="OnOffDevicesFragment" >
+        <argument
+            android:name="deviceType"
+            app:argType="integer" />
+    </fragment>
 </navigation>

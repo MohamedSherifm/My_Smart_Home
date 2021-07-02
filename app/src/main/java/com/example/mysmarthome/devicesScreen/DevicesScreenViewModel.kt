@@ -52,7 +52,7 @@ class DevicesScreenViewModel(
 
     }
 
-    private fun getDevices(arduinoId: Int) {
+     fun getDevices(arduinoId: Int) {
         uiScope.launch {
             try{
                 val listResult = LampApi.retrofitService.getCategories(arduinoId)
@@ -77,8 +77,20 @@ class DevicesScreenViewModel(
         }
     }
 
-    fun onDeviceClicked(device: Devices){
-        Toast.makeText(getApplication(),device.deviceName,Toast.LENGTH_SHORT).show()
+    fun onDeviceClicked(deviceId: Int){
+        _eventNavigation.value = true
+        //Toast.makeText(getApplication(),deviceId,Toast.LENGTH_SHORT).show()
+    }
+
+    fun onNavigationCompleted(){
+        _eventNavigation.value = null
+    }
+
+
+
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
     }
 
 

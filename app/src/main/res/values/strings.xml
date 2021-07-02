@@ -9,7 +9,14 @@
         <item>Television</item>
         <item>Door Lock</item>
         <item>Camera</item>
+    </array>
 
+    <array name="tableNames">
+        <item>lamp</item>
+        <item>ac</item>
+        <item>tv</item>
+        <item>door lock</item>
+        <item>laundry machine</item>
     </array>
 
     <array name="devices_Images">
@@ -27,4 +34,19 @@
         <item>4</item>
         <item>5</item>
     </array>
+
+    <array name="lamp_pins">
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+    </array>
+
+
 </resources>

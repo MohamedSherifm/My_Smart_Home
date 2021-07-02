@@ -5,6 +5,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Query
 
 
@@ -35,6 +36,19 @@ interface HomeApi{
     @GET("getCategories.php")
     suspend fun getCategories(@Query("arduinoId")type:Int):
             List<CategoriesTypes>
+
+    @GET("getDevicePins.php")
+    suspend fun getDevicePins(@Query("table")type:String,@Query("arduinoId")arduinoId:Int):
+            List<devicePins>
+
+    @GET("addLamp.php")
+    suspend fun addLamp(@Query("lampName")lampName:String,@Query("lampPin")pin:Int,@Query("arduinoId")id:Int)
+
+    @GET("addAc.php")
+    suspend fun addAc(@Query("acName")lampName:String,@Query("acPin")pin:Int,@Query("arduinoId")id:Int)
+
+    @GET("addTv.php")
+    suspend fun addTv(@Query("tvName")lampName:String,@Query("tvPin")pin:Int,@Query("arduinoId")id:Int)
 }
 object LampApi {
     val retrofitService : HomeApi by lazy {
