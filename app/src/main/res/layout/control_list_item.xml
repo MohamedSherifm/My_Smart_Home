@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="onOffDevices"
+            type="com.example.mysmarthome.OnOffDevices" />
+
+        <variable
+            name="onClickDeviceListener"
+            type="com.example.mysmarthome.onOffDevices.OnDeviceControlClickListener" />
+
+        <variable
+            name="offClickDeviceListener"
+            type="com.example.mysmarthome.onOffDevices.OffDeviceControlClickListener" />
+
+        <variable
+            name="upClickDeviceListener"
+            type="com.example.mysmarthome.onOffDevices.UpDeviceControlClickListener" />
+
+        <variable
+            name="downClickDeviceListener"
+            type="com.example.mysmarthome.onOffDevices.DownDeviceControlClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded">
+
+        <ImageView
+            android:id="@+id/device_image_view_control"
+            android:layout_width="104dp"
+            android:layout_height="112dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.027"
+            android:src="@{onOffDevices.image}"
+             />
+
+        <TextView
+            android:id="@+id/device_name_control"
+            android:layout_width="180dp"
+            android:layout_height="114dp"
+            android:layout_marginStart="8dp"
+            android:paddingTop="35dp"
+            android:text="@{onOffDevices.name}"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.01"
+            app:layout_constraintStart_toEndOf="@+id/device_image_view_control"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.136" />
+
+        <Button
+            android:id="@+id/turn_on_btn_control"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/circle"
+            android:onClick="@{()->onClickDeviceListener.onClick(onOffDevices)}"
+            android:text="ON"
+            app:layout_constraintBottom_toTopOf="@+id/turn_off_btn_control"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.987"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.444" />
+
+        <Button
+            android:id="@+id/turn_off_btn_control"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/circle"
+            android:onClick="@{()->offClickDeviceListener.onClick(onOffDevices)}"
+            android:text="Off"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.984"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.582" />
+
+        <Button
+            android:id="@+id/degree_down_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:onClick="@{()->downClickDeviceListener.onClick(onOffDevices)}"
+            android:text="Down"
+            app:icon="@android:drawable/arrow_down_float"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.214"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/device_image_view_control"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/degree_up_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->upClickDeviceListener.onClick(onOffDevices)}"
+            android:text="Up"
+            app:icon="@android:drawable/arrow_up_float"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.822"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -23,8 +23,8 @@ class DevicesScreenViewModel(
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
-    private val _eventNavigation = MutableLiveData<Boolean>()
-    val eventNavigate:LiveData<Boolean>
+    private val _eventNavigation = MutableLiveData<Int>()
+    val eventNavigate:LiveData<Int>
     get() = _eventNavigation
 
     private val _devices = MutableLiveData<List<Devices>>()
@@ -49,6 +49,7 @@ class DevicesScreenViewModel(
 
     init {
         getDevices(arduinoId)
+        print("Eshtat")
 
     }
 
@@ -78,12 +79,12 @@ class DevicesScreenViewModel(
     }
 
     fun onDeviceClicked(deviceId: Int){
-        _eventNavigation.value = true
+        _eventNavigation.value = deviceId
         //Toast.makeText(getApplication(),deviceId,Toast.LENGTH_SHORT).show()
     }
 
     fun onNavigationCompleted(){
-        _eventNavigation.value = null
+        _eventNavigation.value = 0
     }
 
 

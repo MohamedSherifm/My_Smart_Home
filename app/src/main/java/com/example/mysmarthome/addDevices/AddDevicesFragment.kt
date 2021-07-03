@@ -111,8 +111,14 @@ class AddDevicesFragment : DialogFragment() {
             updateInfo()
             addDevicesViewModel.addDevicesInTables(deviceType, deviceName,pin,arduinoId)
 
-
         }
+        addDevicesViewModel.added.observe(viewLifecycleOwner, Observer {
+            if(it == true){
+                dismiss()
+                addDevicesViewModel.onAddedComplete()
+            }
+        })
+
         return binding.root
     }
 

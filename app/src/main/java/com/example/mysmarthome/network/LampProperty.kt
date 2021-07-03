@@ -10,5 +10,6 @@ class LampProperty (
     val lamp_name:String,
     val device_type: Int,
     val pin:Int,
+
     val status: Int
         ):Parcelable

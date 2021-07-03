@@ -23,6 +23,10 @@ class AddDevicesViewModel(
     val pinsForDevice : LiveData<List<Int>>
     get() = _pinsForDevice
 
+    private val _added = MutableLiveData<Boolean>()
+    val added : LiveData<Boolean>
+    get() = _added
+
     fun getDevicePins(device:String, arduinoId: Int, pins:List<Int>){
         uiScope.launch {
             try {
@@ -45,8 +49,13 @@ class AddDevicesViewModel(
     fun addDevicesInTables(deviceType:String, deviceName:String, devicePin:Int, arduinoId: Int){
         uiScope.launch {
             addDevice(deviceType,deviceName,devicePin,arduinoId)
+            _added.value=true
         }
 
+    }
+
+    fun onAddedComplete(){
+        _added.value = null
     }
 
     private suspend fun addDevice(deviceType:String, deviceName:String, devicePin:Int, arduinoId: Int){
@@ -56,6 +65,7 @@ class AddDevicesViewModel(
             "ac" -> LampApi.retrofitService.addAc(deviceName,devicePin,arduinoId)
             "tv" -> LampApi.retrofitService.addTv(deviceName,devicePin,arduinoId)
             else -> print("No Devices")
+
         }
         }
     }

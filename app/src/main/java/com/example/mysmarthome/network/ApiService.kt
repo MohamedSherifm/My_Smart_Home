@@ -49,6 +49,30 @@ interface HomeApi{
 
     @GET("addTv.php")
     suspend fun addTv(@Query("tvName")lampName:String,@Query("tvPin")pin:Int,@Query("arduinoId")id:Int)
+
+    @GET("updateLampStatus.php")
+    suspend fun updateLampStatus(@Query("lampId")lampId:Int,@Query("lampPin")lampPin:Int,@Query("arduinoId")arduinoId: Int,@Query("onAndoff")status:Int)
+
+    @GET("updateAcStatus.php")
+    suspend fun updateAcStatus(@Query("acId")acId:Int,@Query("acPin")acPin:Int,@Query("arduinoId")arduinoId: Int,@Query("onAndoff")status:Int)
+
+    @GET("updateTvStatus.php")
+    suspend fun updateTvStatus(@Query("tvId")tvId:Int,@Query("tvPin")tvPin:Int,@Query("arduinoId")arduinoId: Int,@Query("onAndoff")status:Int)
+
+    @GET("deleteLamp.php")
+    suspend fun deleteLamp(@Query("table")tableName:String,@Query("deviceId")deviceId:Int)
+
+    @GET("updateAcTemp.php")
+    suspend fun updateAcTemp(@Query("acId")acId:Int,@Query("acPin")acPin:Int,@Query("arduinoId")arduinoId: Int,@Query("acTemp")temp:Int)
+
+    @GET("updateTvChannel.php")
+    suspend fun updateTvChannel(@Query("tvId")tvId:Int,@Query("tvPin")tvPin:Int,@Query("arduinoId")arduinoId: Int,@Query("tvChannel")channel:Int)
+
+    @GET("deleteAc.php")
+    suspend fun deleteAc(@Query("table")tableName:String,@Query("deviceId")deviceId:Int)
+
+    @GET("deleteTv.php")
+    suspend fun deleteTv(@Query("table")tableName:String,@Query("deviceId")deviceId:Int)
 }
 object LampApi {
     val retrofitService : HomeApi by lazy {

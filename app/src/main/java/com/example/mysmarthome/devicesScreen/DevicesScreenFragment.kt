@@ -45,11 +45,11 @@ class DevicesScreenFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        var deviceTypeId = 0
+
 
         val adapter = DevicesAdapter(DeviceClickListener {
             device -> devicesScreenViewModel.onDeviceClicked(device.deviceId)
-            deviceTypeId = device.deviceId
+
         })
 
         val recyclerViewList = binding.recyclerView
@@ -62,9 +62,9 @@ class DevicesScreenFragment : Fragment() {
         }
         })
 
-        devicesScreenViewModel.eventNavigate.observe(viewLifecycleOwner, Observer {
-            if(it == true){
-                this.findNavController().navigate(DevicesScreenFragmentDirections.actionDevicesScreenFragmentToOnOffDevicesFragment(deviceTypeId))
+        devicesScreenViewModel.eventNavigate.observe(viewLifecycleOwner, Observer {deviceId->
+            if(deviceId != 0 ){
+                this.findNavController().navigate(DevicesScreenFragmentDirections.actionDevicesScreenFragmentToOnOffDevicesFragment(deviceId))
                 devicesScreenViewModel.onNavigationCompleted()
             }
         })
