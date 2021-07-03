@@ -8,11 +8,9 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
-import com.example.mysmarthome.MainActivity.Companion.globalVar
+import com.example.mysmarthome.signIn.MainActivity.Companion.globalVar
 import com.example.mysmarthome.R
 import com.example.mysmarthome.databinding.FragmentAddDevicesBinding
 import kotlin.properties.Delegates

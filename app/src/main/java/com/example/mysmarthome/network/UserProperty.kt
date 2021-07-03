@@ -7,7 +7,7 @@ import kotlinx.android.parcel.Parcelize
 class UserProperty (
     val user_id: Int,
     val user_name:String,
-    val user_password: Int,
+    val user_password: String,
     val user_phoneNumber: String,
     val user_mail:String,
     val arduino_id:Int

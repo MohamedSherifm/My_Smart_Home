@@ -30,7 +30,11 @@ interface HomeApi{
             List<AcProperty>
 
     @GET("getUserInfo.php")
-    suspend fun getUserInfo(@Query("userName")userName: String, @Query("userPassword")userPassword:Int):
+    suspend fun getUserInfo(@Query("userName")userName: String, @Query("userPassword")userPassword:String):
+            List<UserProperty>
+
+    @GET("getUserByName.php")
+    suspend fun getUserInfoByName(@Query("userName")userName: String):
             List<UserProperty>
 
     @GET("getCategories.php")
@@ -73,6 +77,12 @@ interface HomeApi{
 
     @GET("deleteTv.php")
     suspend fun deleteTv(@Query("table")tableName:String,@Query("deviceId")deviceId:Int)
+
+    @GET("addUser.php")
+    suspend fun addNewUser(@Query("userName")userName:String,@Query("userPassword")userPassword:String,@Query("userPhoneNumber")phoneNumber:Int
+                           ,@Query("arduinoId")arduinoId:Int)
+
+
 }
 object LampApi {
     val retrofitService : HomeApi by lazy {

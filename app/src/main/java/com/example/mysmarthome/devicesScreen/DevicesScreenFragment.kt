@@ -1,6 +1,5 @@
 package com.example.mysmarthome.devicesScreen
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,14 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
-import com.example.mysmarthome.MainActivity
-import com.example.mysmarthome.MainActivity.Companion.globalVar
+import com.example.mysmarthome.signIn.MainActivity.Companion.globalVar
 import com.example.mysmarthome.R
 import com.example.mysmarthome.addDevices.AddDevicesFragment
 import com.example.mysmarthome.databinding.FragmentDevicesScreenBinding

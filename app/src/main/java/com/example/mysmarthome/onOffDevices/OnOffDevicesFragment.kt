@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Adapter
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -13,6 +12,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mysmarthome.*
 import com.example.mysmarthome.databinding.FragmentOnOffDevicesBinding
+import com.example.mysmarthome.signIn.MainActivity
 import com.google.android.material.snackbar.Snackbar
 
 
@@ -28,8 +28,6 @@ class OnOffDevicesFragment : Fragment() {
             inflater, R.layout.fragment_on_off_devices, container, false
         )
 
-
-
         val arguments = OnOffDevicesFragmentArgs.fromBundle(requireArguments())
         println("Hello world"+arguments.deviceType)
 
@@ -40,8 +38,6 @@ class OnOffDevicesFragment : Fragment() {
         val viewModelFactory = OnOffDevicesViewModelFactory(arduinoId,arguments.deviceType, resources , application)
 
         val onOffDevicesViewModel = ViewModelProvider(this, viewModelFactory).get(OnOffDevicesViewModel::class.java)
-
-
 
 
         binding.onOffDevicesViewModel = onOffDevicesViewModel

@@ -143,4 +143,9 @@ class OnOffDevicesViewModel(
 
             }
     }
+
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
+    }
 }

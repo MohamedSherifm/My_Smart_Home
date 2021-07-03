@@ -4,9 +4,10 @@
     <data>
 
         <variable
-            name="signInViewModel"
-            type="com.example.mysmarthome.signIn.SignInViewModel" />
+            name="signUpViewModel"
+            type="com.example.mysmarthome.signUp.SignUpViewModel" />
     </data>
+
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,30 +17,28 @@
         android:background="#fff"
         android:orientation="vertical"
         android:padding="20dp"
-        tools:context=".signIn.MainActivity">
+        tools:context=".signUp.SignUp">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/logo_image_view"
             android:layout_width="140dp"
             android:layout_height="140dp"
             android:src="@drawable/icon4"
             android:transitionName="logo_image" />
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="350dp"
+            android:id="@+id/text_image_view"
+            android:layout_width="340dp"
             android:layout_height="80dp"
             android:layout_marginTop="5dp"
-            android:src="@drawable/welcome_syncx3"
+            android:src="@drawable/create3"
             android:transitionName="logo_text" />
 
-
         <TextView
-            android:id="@+id/slogan_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Sign In to continue"
+            android:layout_marginTop="5dp"
+            android:text="Sign up to start your home control"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:transitionName="logo_desc" />
@@ -48,16 +47,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/username"
+                android:id="@+id/name_txt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/user_name_txt"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Username"
-                android:transitionName="username_tran">
+                android:transitionName="username_tran"
+                app:counterMaxLength="15">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -65,8 +78,38 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/password"
+                android:id="@+id/phone_number_txt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/arduino_id_txt"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Arduino Id">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/password_txt"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,41 +124,29 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_margin="5dp"
-                android:background="#00000000"
-                android:elevation="0dp"
-                android:text="Forget Password?"
-                android:textColor="#000" />
 
             <Button
-                android:id="@+id/login_btn"
+                android:id="@+id/sign_up_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="#FF0000"
-                android:text="Login"
+                android:background="#174c83"
+                android:text="SignUp"
                 android:textColor="#fff"
                 android:transitionName="Button_tran" />
 
             <Button
-                android:id="@+id/signup_screen"
+                android:id="@+id/login_screen_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_margin="5dp"
                 android:background="#00000000"
                 android:elevation="0dp"
-                android:text="@string/signup_screen"
+                android:text="Already have an account? LogIn"
                 android:textColor="#000"
                 android:transitionName="login_signup_tran" />
 
 
         </LinearLayout>
-
     </LinearLayout>
 </layout>
